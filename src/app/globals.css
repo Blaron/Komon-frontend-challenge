@@ -18,10 +18,14 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: white
+}
+
+.home-vertical-line {
+  position: absolute;
+  left: 1rem;
+  z-index: 10;
+  height: 100%;
+  width: .25rem;
+  background: linear-gradient(180deg, #cd87f0, #a744c7 5.21%, #d0f 13.02%, #c4d6f3 20.83%, #8cc8cd 27.08%, #50ff88 34.38%, #6151ca 41.15%, #371863 47.92%, #60e1f8 55.73%, #b21ca2 64.58%, #621d63 72.4%, #ff00c6 78.12%, #ff007d 83.33%, #a12837 89.58%, red 95.83%, #6151ca 99.48%);
 }
