@@ -2,7 +2,7 @@
 import Link from "next/link";
 export default function Home() {
   const msgText =
-    "Darte todos los medios para llevar tu comunidad creativa más allá · ";
+    "Giving you all the means to take your creative community further · ";
   const links = [
     {
       label: "Challenge",
