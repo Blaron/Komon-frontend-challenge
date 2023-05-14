@@ -95,9 +95,40 @@ export const ConnectionProvider = ({ children }) => {
     console.log(conexiones);
   };
 
+  const updateName = (oldName, newName, social) => {
+    if (social === "facebook") {
+      setConexiones([
+        ...conexiones.map((nombre) =>
+          nombre.facebook.user.name == oldName
+            ? { ...nombre, ...newName }
+            : nombre
+        ),
+      ]);
+    }
+    if (social === "twitter") {
+      setConexiones([
+        ...conexiones.map((nombre) =>
+          nombre.facebook.user.name === oldName
+            ? { ...nombre, ...newName }
+            : nombre
+        ),
+      ]);
+    }
+    if (social === "instagram") {
+      setConexiones([
+        ...conexiones.map((nombre) =>
+          nombre.facebook.user.name === oldName
+            ? { ...nombre, ...newName }
+            : nombre
+        ),
+      ]);
+    }
+    console.log("Nombre cambiado de:", oldName, "a", newName);
+  };
+
   return (
     <ConnectionContext.Provider
-      value={{ conexiones, createPostFB, createPostTwitter }}
+      value={{ conexiones, createPostFB, createPostTwitter, updateName }}
     >
       {children}
     </ConnectionContext.Provider>
