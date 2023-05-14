@@ -17,6 +17,7 @@ export default function New() {
         myName,
         "instagram"
       );
+      alert("no localStore, please use back");
     }
   };
   return (

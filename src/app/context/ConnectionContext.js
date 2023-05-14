@@ -110,6 +110,7 @@ export const ConnectionProvider = ({ children }) => {
         likes,
       },
     ]);
+    console.log(conexiones);
   };
 
   const createPostTwitter = (id, twit, retweet) => {
@@ -119,33 +120,37 @@ export const ConnectionProvider = ({ children }) => {
 
   const updateName = (oldName, newName, social) => {
     if (social === "facebook") {
-      setConexiones([
-        ...conexiones.map((nombre) =>
-          nombre.facebook.user.name == oldName
-            ? { ...nombre, ...newName }
-            : nombre
-        ),
-      ]);
+      // setConexiones([
+      //   ...conexiones.map((nombre) =>
+      //     nombre.facebook.user.name == oldName
+      //       ? { ...nombre, ...newName }
+      //       : nombre
+      //   ),
+      // ]);
+      conexiones[0].facebook.user.name = newName;
     }
     if (social === "twitter") {
-      setConexiones([
-        ...conexiones.map((nombre) =>
-          nombre.twitter.user.name === oldName
-            ? { ...nombre, ...newName }
-            : nombre
-        ),
-      ]);
+      // setConexiones([
+      //   ...conexiones.map((nombre) =>
+      //     nombre.twitter.user.name === oldName
+      //       ? { ...nombre, ...newName }
+      //       : nombre
+      //   ),
+      // ]);
+      conexiones[0].twitter.user.name = newName;
     }
     if (social === "instagram") {
-      setConexiones([
-        ...conexiones.map((nombre) =>
-          nombre.instagram.user.name === oldName
-            ? { ...nombre, ...newName }
-            : nombre
-        ),
-      ]);
+      // setConexiones([
+      //   ...conexiones.map((nombre) =>
+      //     nombre.instagram.user.name === oldName
+      //       ? { ...nombre, ...newName }
+      //       : nombre
+      //   ),
+      // ]);
+      conexiones[0].instagram.user.name = newName;
     }
     console.log("Nombre cambiado de:", oldName, "a", newName);
+    console.log(conexiones);
   };
 
   return (

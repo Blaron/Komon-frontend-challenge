@@ -13,6 +13,7 @@ export default function New() {
     e.preventDefault();
     if (e.target.value != "") {
       updateName(settings.conexiones[0].twitter.user.name, myName, "twitter");
+      alert("no localStore, please use back");
     }
   };
   return (
