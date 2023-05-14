@@ -130,7 +130,7 @@ export const ConnectionProvider = ({ children }) => {
     if (social === "twitter") {
       setConexiones([
         ...conexiones.map((nombre) =>
-          nombre.facebook.user.name === oldName
+          nombre.twitter.user.name === oldName
             ? { ...nombre, ...newName }
             : nombre
         ),
@@ -139,7 +139,7 @@ export const ConnectionProvider = ({ children }) => {
     if (social === "instagram") {
       setConexiones([
         ...conexiones.map((nombre) =>
-          nombre.facebook.user.name === oldName
+          nombre.instagram.user.name === oldName
             ? { ...nombre, ...newName }
             : nombre
         ),
