@@ -85,7 +85,7 @@ export default function New() {
                     </svg>
                   </div>
                   <input
-                    name="title"
+                    name="twit"
                     type="textarea"
                     id="username"
                     className="mt-4 bg-dark-05 p-3 pl-10 text-dark-75 focus:text-dark-75 block  h-24 w-full rounded-lg border border-solid border-dark-20 text-sm leading-tight text-dark-75 "

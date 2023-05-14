@@ -100,8 +100,18 @@ export const ConnectionProvider = ({ children }) => {
     }
   };
   const createPostFB = (id, title, img, description, likes) => {
-    setConexiones([
-      ...conexiones,
+    // setConexiones([
+    //   ...conexiones,
+    //   {
+    //     id,
+    //     title,
+    //     img,
+    //     description,
+    //     likes,
+    //   },
+    // ]);
+    (conexiones[0].facebook.postImg = [
+      ...conexiones[0].facebook.postImg,
       {
         id,
         title,
@@ -109,12 +119,20 @@ export const ConnectionProvider = ({ children }) => {
         description,
         likes,
       },
-    ]);
-    console.log(conexiones);
+    ]),
+      console.log(conexiones);
   };
 
   const createPostTwitter = (id, twit, retweet) => {
-    setConexiones([...conexiones, { id, twit, retweet }]);
+    //setConexiones([...conexiones, { id, twit, retweet }]);
+    conexiones[0].twitter.post = [
+      ...conexiones[0].twitter.post,
+      {
+        id,
+        twit,
+        retweet,
+      },
+    ];
     console.log(conexiones);
   };
 
