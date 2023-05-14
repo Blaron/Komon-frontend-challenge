@@ -36,6 +36,7 @@ export default function New() {
         newPost.likes
       );
       console.log(newPost);
+      alert("no localStore, please use back");
       redirect("/socialMedia/facebook");
     }
   };

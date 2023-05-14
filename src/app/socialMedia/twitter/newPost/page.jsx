@@ -30,6 +30,7 @@ export default function New() {
     } else {
       createPostTwitter(newPost.id, newPost.twit, newPost.retweet);
       console.log(newPost);
+      alert("no localStore, please use back");
       redirect("/socialMedia/twitter");
     }
   };
