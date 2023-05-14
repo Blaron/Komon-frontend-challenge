@@ -7,9 +7,9 @@ import {
 } from "../../context/ConnectionContext";
 import { useState } from "react";
 
-export default function Settings() {
+export default function Twitter() {
   const settings = useConnectData();
-  const posts = settings.twitter.post;
+  const posts = settings.conexiones[0].twitter.post;
 
   const [disconnects, setDisconnects] = useState(settings);
 
@@ -17,13 +17,13 @@ export default function Settings() {
     setDisconnects({
       ...settings,
       twitter: {
-        ...settings.twitter,
+        ...settings.conexiones[0].twitter,
         isConnected: false,
       },
     });
   };
 
-  return settings.twitter.isConnected != true ? (
+  return settings.conexiones[0].twitter.isConnected != true ? (
     redirect("/connection")
   ) : (
     <main className="w-full min-h-screen">
@@ -52,23 +52,23 @@ export default function Settings() {
       <div className="md:flex md:justify-center">
         <div className="relative max-w-7xl overflow-hidden px-6 pt-8">
           <p className="mt-16 text-2xl font-bold md:text-4xl">
-            Hello,@{settings.twitter.user.name}
+            Hello,@{settings.conexiones[0].twitter.user.name}
           </p>
           <div className="mt-10 flex justify-between mb-4">
             <div>
               <img
-                src={settings.twitter.user.profileImg}
+                src={settings.conexiones[0].twitter.user.profileImg}
                 className="bordererw-10 h-56 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 m-1"
               />
             </div>
             <div>
               <p>
                 <span className="font-semibold">Username: </span>
-                {settings.twitter.user.name}
+                {settings.conexiones[0].twitter.user.name}
               </p>
               <p>
                 <span className="font-semibold">Followers: </span>
-                {settings.twitter.followers}
+                {settings.conexiones[0].twitter.followers}
               </p>
               <hr />
               <button
@@ -77,12 +77,16 @@ export default function Settings() {
               >
                 Disconnect
               </button>
-              <button className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black">
-                Edit
-              </button>
-              <button className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black">
-                New Post
-              </button>
+              <Link href="/socialMedia/twitter/edit">
+                <button className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black">
+                  Edit
+                </button>
+              </Link>
+              <Link href="/socialMedia/twitter/newPost">
+                <button className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black">
+                  New Post
+                </button>
+              </Link>
             </div>
             <div className="max-w-auto md:max-w-auto md:text-2xl">
               <div className="mb-1 flex w-full"></div>

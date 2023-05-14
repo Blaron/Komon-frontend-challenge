@@ -44,7 +44,7 @@ export default function Connection() {
                           Twitter
                         </p>
                         <p className="text-sm text-gray-700 flex items-center font-semibold">
-                          {settings.twitter.isConnected ? (
+                          {settings.conexiones[0].twitter.isConnected ? (
                             <svg
                               className="mr-1"
                               width="1rem"
@@ -61,8 +61,8 @@ export default function Connection() {
                           ) : (
                             ""
                           )}
-                          {settings.twitter.isConnected
-                            ? `connected as ${settings.twitter.user.name}`
+                          {settings.conexiones[0].twitter.isConnected
+                            ? `connected as ${settings.conexiones[0].twitter.user.name}`
                             : ""}
                         </p>
                         <p className="text-sm text-gray-500 truncate dark:text-gray-400 max-w-auto md:max-w-auto mr-5">
@@ -75,7 +75,7 @@ export default function Connection() {
                       </div>
                       <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                         <Link href="./socialMedia/twitter">
-                          {settings.twitter.isConnected ? (
+                          {settings.conexiones[0].twitter.isConnected ? (
                             <button className="w-full h-8 md:h-12 text-white  bg-dark-100 border border-solid focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer">
                               <span className="flex items-center rounded-md text-xs md:text-sm font-euclid-triangle px-6 py-3">
                                 Manage
@@ -100,7 +100,7 @@ export default function Connection() {
                           Instagram
                         </p>
                         <p className="text-sm text-gray-700 flex items-center font-semibold">
-                          {settings.instagram.isConnected ? (
+                          {settings.conexiones[0].instagram.isConnected ? (
                             <svg
                               className="mr-1"
                               width="1rem"
@@ -117,8 +117,8 @@ export default function Connection() {
                           ) : (
                             ""
                           )}
-                          {settings.instagram.isConnected
-                            ? `connected as ${settings.instagram.user.name}`
+                          {settings.conexiones[0].instagram.isConnected
+                            ? `connected as ${settings.conexiones[0].instagram.user.name}`
                             : ""}
                         </p>
                         <p className="text-sm text-gray-500 truncate dark:text-gray-400 max-w-auto md:max-w-auto mr-5">
@@ -132,7 +132,7 @@ export default function Connection() {
                       </div>
                       <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                         <Link href="./socialMedia/instagram">
-                          {settings.instagram.isConnected ? (
+                          {settings.conexiones[0].instagram.isConnected ? (
                             <button className="w-full h-8 md:h-12 text-white  bg-dark-100 border border-solid focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer">
                               <span className="flex items-center rounded-md text-xs md:text-sm font-euclid-triangle px-6 py-3">
                                 Manage
@@ -157,7 +157,7 @@ export default function Connection() {
                           Facebook
                         </p>
                         <p className="text-sm text-gray-700 flex items-center font-semibold">
-                          {settings.facebook.isConnected ? (
+                          {settings.conexiones[0].facebook.isConnected ? (
                             <svg
                               className="mr-1"
                               width="1rem"
@@ -174,8 +174,8 @@ export default function Connection() {
                           ) : (
                             ""
                           )}
-                          {settings.facebook.isConnected
-                            ? `connected as ${settings.facebook.user.name}`
+                          {settings.conexiones[0].facebook.isConnected
+                            ? `connected as ${settings.conexiones[0].facebook.user.name}`
                             : ""}
                         </p>
                         <p className="text-sm text-gray-500 truncate dark:text-gray-400 max-w-auto md:max-w-auto mr-5">
@@ -189,7 +189,7 @@ export default function Connection() {
                       </div>
                       <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                         <Link href="./socialMedia/facebook">
-                          {settings.facebook.isConnected ? (
+                          {settings.conexiones[0].facebook.isConnected ? (
                             <button className="w-full h-8 md:h-12 text-white  bg-dark-100 border border-solid focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer">
                               <span className="flex items-center rounded-md text-xs md:text-sm font-euclid-triangle px-6 py-3">
                                 Manage

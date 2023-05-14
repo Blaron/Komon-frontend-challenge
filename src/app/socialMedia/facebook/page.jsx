@@ -7,9 +7,9 @@ import {
 } from "../../context/ConnectionContext";
 import { useState } from "react";
 
-export default function Settings() {
+export default function Facebook() {
   const settings = useConnectData();
-  const posts = settings.facebook.postImg;
+  const posts = settings.conexiones[0].facebook.postImg;
   const [disconnects, setDisconnects] = useState(settings);
 
   const disconnect = () => {
@@ -21,8 +21,8 @@ export default function Settings() {
       },
     });
   };
-  console.log(settings.facebook.isConnected);
-  return settings.facebook.isConnected != true ? (
+  console.log(settings.conexiones[0].facebook.isConnected);
+  return settings.conexiones[0].facebook.isConnected != true ? (
     redirect("/connection")
   ) : (
     <main className="w-full min-h-screen">
@@ -51,23 +51,23 @@ export default function Settings() {
       <div className="md:flex md:justify-center">
         <div className="relative max-w-7xl overflow-hidden px-6 pt-8">
           <p className="mt-16 text-2xl font-bold md:text-4xl">
-            Hello,@{settings.facebook.user.name}
+            Hello,@{settings.conexiones[0].facebook.user.name}
           </p>
           <div className="mt-10 flex justify-between mb-4">
             <div>
               <img
-                src={settings.facebook.user.profileImg}
+                src={settings.conexiones[0].facebook.user.profileImg}
                 className="bordererw-10 h-56 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 m-1"
               />
             </div>
             <div>
               <p>
                 <span className="font-semibold">Username: </span>
-                {settings.facebook.user.name}
+                {settings.conexiones[0].facebook.user.name}
               </p>
               <p>
                 <span className="font-semibold">Followers: </span>
-                {settings.facebook.followers}
+                {settings.conexiones[0].facebook.followers}
               </p>
               <hr />
               <button
@@ -76,12 +76,16 @@ export default function Settings() {
               >
                 Disconnect
               </button>
-              <button className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black">
-                Edit
-              </button>
-              <button className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black">
-                New Post
-              </button>
+              <Link href="/socialMedia/facebook/edit">
+                <button className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black">
+                  Edit
+                </button>
+              </Link>
+              <Link href="/socialMedia/facebook/newPost">
+                <button className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black">
+                  New Post
+                </button>
+              </Link>
             </div>
             <div className="max-w-auto md:max-w-auto md:text-2xl">
               <div className="mb-1 flex w-full"></div>
