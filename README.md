@@ -18,6 +18,12 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Unfinished business
+- Fix the global statuses to be able to update or add 
+- Maybe change the version to NextJS 12 instead of 13 ( bad decision with latest server and client changes )
+- Mimic a backend login for page on instagram example.
+- I have used random images, could be changed to project images in public folder
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
