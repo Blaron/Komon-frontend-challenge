@@ -24,6 +24,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - Mimic a backend login for page on instagram example.
 - I have used random images, could be changed to project images in public folder
 - use LocalStore
+- I have changed some things at the last minute as I did not have time to implement the use of local storage.
 
 ## Learn More
 
