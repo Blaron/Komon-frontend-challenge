@@ -17,24 +17,38 @@ export const ConnectionProvider = ({ children }) => {
   const conexiones = {
     instagram: {
       isConnected: false,
-      user: "Komon-instagram",
+      user: {
+        name: "Komon-instagram",
+        profileImg: "../../../public/profile.png",
+      },
+      followers: 1500000,
       postImg: {
         id: 1,
         title: "demo title",
         img: "https://picsum.photos/200/300",
+        likes: 420,
       },
     },
     twitter: {
       isConnected: false,
-      user: "Komon-twitter",
+      user: {
+        name: "Komon-twitter",
+        profileImg: "../../../public/profile.png",
+      },
+      followers: 1200,
       post: {
         id: 1,
         twit: "demo twit",
+        retweet: 23,
       },
     },
     facebook: {
       isConnected: true,
-      user: "Komon-facebook",
+      user: {
+        name: "Komon-facebook",
+        profileImg: "../../../public/profile.png",
+      },
+      followers: 400,
       postImg: {
         id: 1,
         title: "demo title",

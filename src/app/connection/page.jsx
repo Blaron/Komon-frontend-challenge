@@ -43,20 +43,27 @@ export default function Connection() {
                         <p className="text-sm font-medium text-gray-900 truncate dark:text-black">
                           Twitter
                         </p>
-                        <p className="text-sm text-gray-700 flex items-center hidden">
-                          <svg
-                            className="mr-1"
-                            width="1rem"
-                            height="1rem"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill=" #31bde0 "
-                              fillRule="evenodd"
-                              d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm3 5 1.5 1.5L9 14l-3.5-3.5L7 9l2 2 4-4z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
+                        <p className="text-sm text-gray-700 flex items-center font-semibold">
+                          {settings.twitter.isConnected ? (
+                            <svg
+                              className="mr-1"
+                              width="1rem"
+                              height="1rem"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fill=" #31bde0 "
+                                fillRule="evenodd"
+                                d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm3 5 1.5 1.5L9 14l-3.5-3.5L7 9l2 2 4-4z"
+                                clipRule="evenodd"
+                              ></path>
+                            </svg>
+                          ) : (
+                            ""
+                          )}
+                          {settings.twitter.isConnected
+                            ? `connected as ${settings.twitter.user.name}`
+                            : ""}
                         </p>
                         <p className="text-sm text-gray-500 truncate dark:text-gray-400 max-w-auto md:max-w-auto mr-5">
                           By connecting this account to your Twitter account,
@@ -92,20 +99,27 @@ export default function Connection() {
                         <p className="text-sm font-medium text-gray-900 truncate dark:text-black">
                           Instagram
                         </p>
-                        <p className="text-sm text-gray-700 flex items-center hidden">
-                          <svg
-                            className="mr-1"
-                            width="1rem"
-                            height="1rem"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill=" #31bde0 "
-                              fillRule="evenodd"
-                              d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm3 5 1.5 1.5L9 14l-3.5-3.5L7 9l2 2 4-4z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
+                        <p className="text-sm text-gray-700 flex items-center font-semibold">
+                          {settings.instagram.isConnected ? (
+                            <svg
+                              className="mr-1"
+                              width="1rem"
+                              height="1rem"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fill=" #31bde0 "
+                                fillRule="evenodd"
+                                d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm3 5 1.5 1.5L9 14l-3.5-3.5L7 9l2 2 4-4z"
+                                clipRule="evenodd"
+                              ></path>
+                            </svg>
+                          ) : (
+                            ""
+                          )}
+                          {settings.instagram.isConnected
+                            ? `connected as ${settings.instagram.user.name}`
+                            : ""}
                         </p>
                         <p className="text-sm text-gray-500 truncate dark:text-gray-400 max-w-auto md:max-w-auto mr-5">
                           By connecting this account to your Instagram account,
@@ -143,20 +157,26 @@ export default function Connection() {
                           Facebook
                         </p>
                         <p className="text-sm text-gray-700 flex items-center font-semibold">
-                          <svg
-                            className="mr-1"
-                            width="1rem"
-                            height="1rem"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill=" #31bde0 "
-                              fillRule="evenodd"
-                              d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm3 5 1.5 1.5L9 14l-3.5-3.5L7 9l2 2 4-4z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
-                          connected as : {settings.facebook.user}
+                          {settings.facebook.isConnected ? (
+                            <svg
+                              className="mr-1"
+                              width="1rem"
+                              height="1rem"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fill=" #31bde0 "
+                                fillRule="evenodd"
+                                d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm3 5 1.5 1.5L9 14l-3.5-3.5L7 9l2 2 4-4z"
+                                clipRule="evenodd"
+                              ></path>
+                            </svg>
+                          ) : (
+                            ""
+                          )}
+                          {settings.facebook.isConnected
+                            ? `connected as ${settings.facebook.user.name}`
+                            : ""}
                         </p>
                         <p className="text-sm text-gray-500 truncate dark:text-gray-400 max-w-auto md:max-w-auto mr-5">
                           By connecting this account to your Facebook account,
