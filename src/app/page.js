@@ -5,17 +5,17 @@ export default function Home() {
     "Darte todos los medios para llevar tu comunidad creativa más allá · ";
   const links = [
     {
-      label: "Connections",
+      label: "Challenge",
       route: "/connection",
     },
-    {
-      label: "Settings",
-      route: "/settings",
-    },
-    {
-      label: "Details",
-      route: "/details",
-    },
+    // {
+    //   label: "Settings",
+    //   route: "/settings",
+    // },
+    // {
+    //   label: "Details",
+    //   route: "/details",
+    // },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function Home() {
 
       <span className="text-black text-lg font-bold md:flex text-center md:justify-center mt-5 flex">
         In this challenge, I assume that the user is logged in with his
-        credentials, at the bottom there is a menu to perform the tests of the
+        credentials, at the bottom there is a button to perform the tests of the
         three required points
       </span>
       <div className="md:flex md:justify-center">
