@@ -1,30 +1,22 @@
 "use client";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import {
-  useConnectData,
-  disconnectUser,
-} from "../../context/ConnectionContext";
+import { useConnectData } from "../../context/ConnectionContext";
 import { useState } from "react";
 
 export default function Twitter() {
   const settings = useConnectData();
   const posts = settings.conexiones[0].twitter.post;
-
+  const { disconnectUser } = useConnectData();
   const [disconnects, setDisconnects] = useState(settings);
 
   const disconnect = () => {
-    setDisconnects({
-      ...settings,
-      twitter: {
-        ...settings.conexiones[0].twitter,
-        isConnected: false,
-      },
-    });
+    disconnectUser("twitter");
+    alert("no localStore, please use back");
   };
 
   return settings.conexiones[0].twitter.isConnected != true ? (
-    redirect("/connection")
+    alert("Demo, return if not login" + redirect("/socialMedia/twitter/login"))
   ) : (
     <main className="w-full min-h-screen">
       <div className="md:flex md:justify-center">

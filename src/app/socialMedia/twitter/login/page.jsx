@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useConnectData } from "../../../context/ConnectionContext";
+
 export default function Settings() {
   const { connectUser } = useConnectData();
   const connect = () => {
-    connectUser("instagram");
+    connectUser("twitter");
     alert("no localStore, please use back");
   };
   return (
@@ -48,7 +49,7 @@ export default function Settings() {
               placeholder="password"
             />
             <button
-              //onClick={connect}
+              onClick={connect}
               className="mt-4 mx-2 w-11/12 h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black"
             >
               Connect

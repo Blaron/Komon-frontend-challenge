@@ -10,9 +10,6 @@ export const useConnectData = () => {
   return context;
 };
 
-export function disconnectUser() {
-  // TODO
-}
 export const ConnectionProvider = ({ children }) => {
   // Here we can bring the information from somewhere ( supabase, firebase...)
   // For the challenge, we will use these data
@@ -77,6 +74,31 @@ export const ConnectionProvider = ({ children }) => {
     },
   ]);
 
+  const disconnectUser = (social) => {
+    if (social === "facebook") {
+      conexiones[0].facebook.isConnected = false;
+      console.log(conexiones[0].facebook.isConnected);
+    }
+    if (social === "twitter") {
+      conexiones[0].twitter.isConnected = false;
+    }
+    if (social === "instagram") {
+      conexiones[0].instagram.isConnected = false;
+    }
+  };
+
+  const connectUser = (social) => {
+    if (social === "facebook") {
+      conexiones[0].facebook.isConnected = true;
+      console.log(conexiones[0].facebook.isConnected);
+    }
+    if (social === "twitter") {
+      conexiones[0].twitter.isConnected = true;
+    }
+    if (social === "instagram") {
+      conexiones[0].instagram.isConnected = true;
+    }
+  };
   const createPostFB = (id, title, img, description, likes) => {
     setConexiones([
       ...conexiones,
@@ -128,7 +150,14 @@ export const ConnectionProvider = ({ children }) => {
 
   return (
     <ConnectionContext.Provider
-      value={{ conexiones, createPostFB, createPostTwitter, updateName }}
+      value={{
+        conexiones,
+        createPostFB,
+        createPostTwitter,
+        updateName,
+        disconnectUser,
+        connectUser,
+      }}
     >
       {children}
     </ConnectionContext.Provider>

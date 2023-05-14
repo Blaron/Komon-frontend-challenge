@@ -10,6 +10,7 @@ import { useState } from "react";
 export default function instagram() {
   const settings = useConnectData();
   const posts = settings.conexiones[0].instagram.postImg;
+  console.log(posts);
   const [disconnects, setDisconnects] = useState(settings);
 
   const disconnect = () => {

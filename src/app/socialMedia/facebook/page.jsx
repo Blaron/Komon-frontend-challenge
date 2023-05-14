@@ -1,29 +1,21 @@
 "use client";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import {
-  useConnectData,
-  disconnectUser,
-} from "../../context/ConnectionContext";
+import { useConnectData } from "../../context/ConnectionContext";
 import { useState } from "react";
 
 export default function Facebook() {
   const settings = useConnectData();
   const posts = settings.conexiones[0].facebook.postImg;
-  const [disconnects, setDisconnects] = useState(settings);
+  const { disconnectUser } = useConnectData();
 
   const disconnect = () => {
-    setDisconnects({
-      ...settings,
-      facebook: {
-        ...settings.facebook,
-        isConnected: false,
-      },
-    });
+    disconnectUser("facebook");
+    alert("no localStore, please use back");
   };
   console.log(settings.conexiones[0].facebook.isConnected);
   return settings.conexiones[0].facebook.isConnected != true ? (
-    redirect("/connection")
+    alert("Demo, return if not login" + redirect("/socialMedia/facebook/login"))
   ) : (
     <main className="w-full min-h-screen">
       <div className="md:flex md:justify-center">
