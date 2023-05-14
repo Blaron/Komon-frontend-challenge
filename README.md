@@ -23,6 +23,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - Maybe change the version to NextJS 12 instead of 13 ( bad decision with latest server and client changes )
 - Mimic a backend login for page on instagram example.
 - I have used random images, could be changed to project images in public folder
+- use LocalStore
 
 ## Learn More
 
