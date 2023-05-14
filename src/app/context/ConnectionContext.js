@@ -2,7 +2,7 @@
 import { createContext, useContext } from "react";
 
 export const ConnectionContext = createContext();
-
+let conexiones = {};
 export const useConnectData = () => {
   const context = useContext(ConnectionContext);
 
@@ -10,11 +10,14 @@ export const useConnectData = () => {
   return context;
 };
 
+export function disconnectUser() {
+  // TODO
+}
 export const ConnectionProvider = ({ children }) => {
   // Here we can bring the information from somewhere ( supabase, firebase...)
   // For the challenge, we will use these data
 
-  const conexiones = {
+  conexiones = {
     instagram: {
       isConnected: false,
       user: {
@@ -30,17 +33,21 @@ export const ConnectionProvider = ({ children }) => {
       },
     },
     twitter: {
-      isConnected: false,
+      isConnected: true,
       user: {
         name: "Komon-twitter",
-        profileImg: "../../../public/profile.png",
+        profileImg: "http://xsgames.co/randomusers/avatar.php?g=male",
       },
       followers: 1200,
-      post: {
-        id: 1,
-        twit: "demo twit",
-        retweet: 23,
-      },
+      post: [
+        {
+          id: 1,
+          twit: "demo twit",
+          retweet: 23,
+        },
+        { id: 2, twit: "demo twit 2 ", retweet: 123 },
+        { id: 3, twit: "demo twit 3 ", retweet: 234 },
+      ],
     },
     facebook: {
       isConnected: true,
@@ -60,13 +67,14 @@ export const ConnectionProvider = ({ children }) => {
         {
           id: 2,
           title: "demo title 2",
-          img: "https://picsum.photos/420/300",
+          img: "https://picsum.photos/420/301",
           description: "Lorem ipsum dolor sit amet, ♥🐶",
           likes: 167,
         },
       ],
     },
   };
+
   return (
     <ConnectionContext.Provider value={conexiones}>
       {children}

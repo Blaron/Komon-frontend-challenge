@@ -1,16 +1,34 @@
 "use client";
 import Link from "next/link";
-import { useConnectData } from "../../context/ConnectionContext";
+import { redirect } from "next/navigation";
+import {
+  useConnectData,
+  disconnectUser,
+} from "../../context/ConnectionContext";
+import { useState } from "react";
 
 export default function Settings() {
   const settings = useConnectData();
   const posts = settings.facebook.postImg;
+  const [disconnects, setDisconnects] = useState(settings);
 
-  return (
+  const disconnect = () => {
+    setDisconnects({
+      ...settings,
+      facebook: {
+        ...settings.facebook,
+        isConnected: false,
+      },
+    });
+  };
+  console.log(settings.facebook.isConnected);
+  return settings.facebook.isConnected != true ? (
+    redirect("/connection")
+  ) : (
     <main className="w-full min-h-screen">
       <div className="md:flex md:justify-center">
         <div className="mb-3 flex w-1/5 items-center justify-between">
-          <Link href="/" className="flex items-center">
+          <Link href="/connection" className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -51,6 +69,19 @@ export default function Settings() {
                 <span className="font-semibold">Followers: </span>
                 {settings.facebook.followers}
               </p>
+              <hr />
+              <button
+                onClick={disconnect}
+                className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black"
+              >
+                Disconnect
+              </button>
+              <button className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black">
+                Edit
+              </button>
+              <button className="mt-1 mx-2 w-full h-8 md:h-12 focus:ring-4 group flex items-center justify-center p-0.7 text-center font-medium focus:z-10 rounded-lg cursor-pointer bg-transparent text-black border border-solid border-black">
+                New Post
+              </button>
             </div>
             <div className="max-w-auto md:max-w-auto md:text-2xl">
               <div className="mb-1 flex w-full"></div>
