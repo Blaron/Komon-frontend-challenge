@@ -46,14 +46,25 @@ export const ConnectionProvider = ({ children }) => {
       isConnected: true,
       user: {
         name: "Komon-facebook",
-        profileImg: "../../../public/profile.png",
+        profileImg: "http://xsgames.co/randomusers/avatar.php?g=female",
       },
       followers: 400,
-      postImg: {
-        id: 1,
-        title: "demo title",
-        img: "https://picsum.photos/200/300",
-      },
+      postImg: [
+        {
+          id: 1,
+          title: "demo title",
+          img: "https://picsum.photos/420/300",
+          description: "Lorem ipsum dolor sit amet, ♥😽",
+          likes: 244,
+        },
+        {
+          id: 2,
+          title: "demo title 2",
+          img: "https://picsum.photos/420/300",
+          description: "Lorem ipsum dolor sit amet, ♥🐶",
+          likes: 167,
+        },
+      ],
     },
   };
   return (
